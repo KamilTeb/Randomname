@@ -1,8 +1,12 @@
-// Pobieramy diva i button
+const btn = document.querySelector('button');
+const div = document.querySelector('div');
 
-// Dwie tablice z imionami i prefixami
+const names = ['Anna', 'Maria', 'Darek', 'Marek'];
+const prefixes = ['Wydaje mi się', 'Mam wrażenie', 'Szczerze uważam', 'Na 100% twierdzę', 'Na pewno wiem']
 
-// Funkcja losująca imię i prefix i wyświetlająca info w divie
+const nameGenerator = () => {
+    const indexName = Math.floor(Math.random() * names.length);
 
-// Nasłuchiwanie na buttonie na powyższą funkcję
-
+    div.textContent = `${prefixes[Math.floor(Math.random() * prefixes.length)]}, że najlepsze imię to ${names[indexName]}`
+}
+btn.addEventListener('click', nameGenerator);
